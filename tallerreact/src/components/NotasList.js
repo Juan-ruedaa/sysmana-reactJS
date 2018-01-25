@@ -6,16 +6,15 @@ class NotasList extends Component {
         return (
             <div id="containerViewNotas">
                 {this.props.notas.map(function (u, index) {
-                    if (u.validado) {
-                        return (
-                            <Nota
-                                key={index}
-                                titulo={u.titulo}
-                                tarea={u.tarea}
-                            />
-                        );
-                    }
-                    return false;
+
+                    return (
+                        <Nota
+                            key={index}
+                            titulo={u.titulo}
+                            tarea={u.tarea}
+                        />
+                    );
+
                 })}
             </div>
         );
