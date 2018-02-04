@@ -19,11 +19,20 @@ class App extends Component {
     event.preventDefault();
     let nota = {
       titulo: event.target.titulo.value,
-      tarea: event.target.tarea.value
+      tarea: event.target.tarea.value,
     };
     this.setState({
       notas: this.state.notas.concat([nota])
     });
+  }
+
+  handleOnDeleteNota(event) {
+    //console.log(event.target.className)
+    //this.state.notas.splice(0,1);
+    //this.setState({
+    //  notas: this.state.notas
+    //});
+    console.log(this)
   }
 
   render() {
@@ -32,7 +41,7 @@ class App extends Component {
         <NotasForm onAddNota={this.handleOnAddNota.bind(this)} />
 
         <section id="sectionViewNotas">
-          <NotasList notas={this.state.notas} />
+          <NotasList notas={this.state.notas} onClick={(event) => {this.handleOnDeleteNota}} />
         </section>
       </main>
     );
