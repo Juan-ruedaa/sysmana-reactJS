@@ -26,22 +26,13 @@ class App extends Component {
     });
   }
 
-  handleOnDeleteNota(event) {
-    //console.log(event.target.className)
-    //this.state.notas.splice(0,1);
-    //this.setState({
-    //  notas: this.state.notas
-    //});
-    console.log(this)
-  }
-
   render() {
     return (
       <main id="main">
         <NotasForm onAddNota={this.handleOnAddNota.bind(this)} />
 
         <section id="sectionViewNotas">
-          <NotasList notas={this.state.notas} onClick={(event) => {this.handleOnDeleteNota}} />
+          <NotasList notas={this.state.notas} />
         </section>
       </main>
     );

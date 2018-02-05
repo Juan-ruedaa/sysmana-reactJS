@@ -12,11 +12,10 @@ class NotasList extends Component {
                             key={index}
                             titulo={u.titulo}
                             tarea={u.tarea}
-                            onClick={this.props.onClick.bind(index)}
                         />
                     );
 
-                }.bind(this))}
+                })}
             </div>
         );
     }
